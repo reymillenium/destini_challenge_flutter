@@ -1,9 +1,8 @@
 import 'story.dart';
 
 class StoryBrain {
+  // Properties:
   int _storyNumber = 0;
-  int maxIndex;
-
   List<Story> _storyData = [
     Story(
         storyTitle:
@@ -21,38 +20,26 @@ class StoryBrain {
     Story(storyTitle: 'You bond with the murderer while crooning verses of "Can you feel the love tonight". He drops you off at the next town. Before you go he asks you if you know any good places to dump bodies. You reply: "Try the pier".', choice1: 'Restart', choice2: 'Restart')
   ];
 
-// Constructor
-  StoryBrain() {
-    maxIndex = _storyData.length - 1;
-  }
-
-// Getters
+// Getters:
   Story getStory(int index) {
     return _storyData[index];
   }
 
+  // Public methods:
   String getCurrentStoryTitle() {
     return _storyData[_storyNumber].storyTitle;
-  }
-
-  String getChoice1(Story story) {
-    return story.choice1;
   }
 
   String getCurrentChoice1() {
     return _storyData[_storyNumber].choice1;
   }
 
-  String getChoice2(Story story) {
-    return story.choice2;
-  }
-
   String getCurrentChoice2() {
     return _storyData[_storyNumber].choice2;
   }
 
-  void restart() {
-    _storyNumber = 0;
+  bool buttonShouldBeVisible() {
+    return _storyNumber < 3;
   }
 
   void nextStory(int choiceNumber) {
@@ -68,13 +55,14 @@ class StoryBrain {
         break;
       default:
         {
-          restart();
+          _restart();
         }
         break;
     }
   }
 
-  bool buttonShouldBeVisible() {
-    return _storyNumber < 3;
+  // Private methods:
+  void _restart() {
+    _storyNumber = 0;
   }
 }
