@@ -14,7 +14,7 @@ class Destiny extends StatelessWidget {
     return MaterialApp(
       title: 'Destiny Challenge',
       theme: ThemeData.dark(),
-      home: StoryPage(title: 'Destiny Challenge Home Page'),
+      home: StoryPage(title: 'Destiny Challenge'),
     );
   }
 }
