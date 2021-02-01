@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(Destiny());
 }
 
-class MyApp extends StatelessWidget {
+class Destiny extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -26,13 +26,13 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: StoryPage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class StoryPage extends StatefulWidget {
+  StoryPage({Key key, this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -46,10 +46,10 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _StoryPageState createState() => _StoryPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _StoryPageState extends State<StoryPage> {
   int _counter = 0;
 
   void _incrementCounter() {
